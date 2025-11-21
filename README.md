@@ -1,4 +1,8 @@
-# base-vite-react
+# chonky-prefect
+
+React UI frontend for sending file job requests to prefect rest api backend
+
+* Chonky file browser
 
 ## Getting Started Steps
 
