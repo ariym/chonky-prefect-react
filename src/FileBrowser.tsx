@@ -33,6 +33,40 @@ const CreateFileAction = defineFileAction({
   },
 } as const);
 
+// Custom dropdown actions - grouped together by using the same group name
+const CustomDropdownAction1 = defineFileAction({
+  id: 'custom_dropdown_option_1',
+  button: {
+    name: 'Option 1',
+    toolbar: true,
+    group: 'customDropdown',
+    tooltip: 'Custom option 1',
+    icon: ChonkyIconName.folder,
+  },
+} as const);
+
+const CustomDropdownAction2 = defineFileAction({
+  id: 'custom_dropdown_option_2',
+  button: {
+    name: 'Option 2',
+    toolbar: true,
+    group: 'customDropdown',
+    tooltip: 'Custom option 2',
+    icon: ChonkyIconName.download,
+  },
+} as const);
+
+const CustomDropdownAction3 = defineFileAction({
+  id: 'custom_dropdown_option_3',
+  button: {
+    name: 'Option 3',
+    toolbar: true,
+    group: 'customDropdown',
+    tooltip: 'Custom option 3',
+    icon: ChonkyIconName.upload,
+  },
+} as const);
+
 // Convert backend file item to Chonky file format
 function convertToChonkyFile(file: fileAPI.FileItem, currentPath: string): FileData {
   const fullPath = currentPath === '/' ? `/${file.name}` : `${currentPath}/${file.name}`;
@@ -181,6 +215,27 @@ export default function FileBrowserComponent({ initialPath = DEFAULT_FILE_PATH }
             break;
           }
 
+          case CustomDropdownAction1.id: {
+            // Handle custom dropdown option 1
+            console.log('Custom dropdown option 1 selected');
+            alert('Option 1 selected!');
+            break;
+          }
+
+          case CustomDropdownAction2.id: {
+            // Handle custom dropdown option 2
+            console.log('Custom dropdown option 2 selected');
+            alert('Option 2 selected!');
+            break;
+          }
+
+          case CustomDropdownAction3.id: {
+            // Handle custom dropdown option 3
+            console.log('Custom dropdown option 3 selected');
+            alert('Option 3 selected!');
+            break;
+          }
+
           default:
             break;
         }
@@ -220,6 +275,9 @@ export default function FileBrowserComponent({ initialPath = DEFAULT_FILE_PATH }
           ChonkyActions.DeleteFiles,
           ChonkyActions.OpenFiles,
           ChonkyActions.OpenParentFolder,
+          CustomDropdownAction1,
+          CustomDropdownAction2,
+          CustomDropdownAction3,
         ]}
       >
         <FileNavbar />
