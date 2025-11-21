@@ -1,9 +1,31 @@
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
-import { Input } from "@/components/ui/input";
+
+const PREFECT_DASHBOARD_URL = import.meta.env.VITE_PREFECT_DASHBOARD_URL;
+
+const NavMenu = () => (
+  <div>
+    <a target="_blank" href={PREFECT_DASHBOARD_URL}>
+      <span className="mr-5">Prefect Dashboard</span>
+    </a>
+    <Link to="/jobs">
+      <span>Jobs</span>
+    </Link>
+  </div>
+);
 
 export default () => (
-  
-  <header className="flex flex-row justify-between pt-3 items-center">
+
+  <header className="flex flex-row justify-between p-3 items-center">
 
     <Link to="/">
       <span className='text-2xl'>
@@ -11,11 +33,7 @@ export default () => (
       </span>
     </Link>
 
-    <div className="flex items-center space-x-2 w-80">
-      <Input type="text" className="px-3 py-2 " placeholder="Single / for whole site. Double // for this page." />
-    </div>
-
-  <p>hey</p>
+    <NavMenu />
 
   </header>
 );
