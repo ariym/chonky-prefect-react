@@ -15,7 +15,7 @@ const PREFECT_DASHBOARD_URL = import.meta.env.VITE_PREFECT_DASHBOARD_URL;
 const NavMenu = () => (
   <div>
     <a target="_blank" href={PREFECT_DASHBOARD_URL}>
-      <span className="mr-5">Prefect Dashboard</span>
+      <span className="mr-5">Prefect-Dashboard</span>
     </a>
     <Link to="/jobs">
       <span>Jobs</span>
@@ -29,7 +29,7 @@ export default () => (
 
     <Link to="/">
       <span className='text-2xl'>
-        <span className='font-light'>Chonky</span><span className="font-extrabold">Prefect</span>
+        <span className='font-light'>Media</span><span className="font-extrabold">Processor</span>
       </span>
     </Link>
 
