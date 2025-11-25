@@ -215,6 +215,8 @@ export default function FileBrowserComponent({ initialPath = DEFAULT_FILE_PATH }
             break;
           }
 
+          // BEGIN CUSTOM ACTIONS
+
           case CustomDropdownAction1.id: {
             // Handle custom dropdown option 1
             console.log('Custom dropdown option 1 selected');
